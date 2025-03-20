@@ -3,9 +3,44 @@ const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { sendEmail } = require("../utils/emailService");
-const generateVerificationCode = () =>
-  crypto.randomInt(100000, 999999).toString();
+const generateVerificationCode = () => crypto.randomInt(100000, 999999).toString();
 const { validationResult } = require("express-validator");
+
+exports.getUsers = async (req, res) => {
+  try {
+    const { search, page = 1, limit = 10 } = req.query;
+
+    let query = {};
+
+    if (search) {
+      query = {
+        $or: [
+          { firstName: { $regex: search, $options: "i" } },
+          { lastName: { $regex: search, $options: "i" } },
+          { phoneNumber: { $regex: search, $options: "i" } },
+          { email: { $regex: search, $options: "i" } },
+        ],
+      };
+    }
+
+    const users = await User.find(query)
+      .skip((page - 1) * limit)
+      .limit(parseInt(limit))
+      .sort({ createdAt: -1 });
+
+    const totalUsers = await User.countDocuments(query);
+
+    res.json({
+      totalUsers,
+      currentPage: parseInt(page),
+      totalPages: Math.ceil(totalUsers / limit),
+      users,
+    });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ msg: error.message });
+  }
+};
 
 exports.signUp = async (req, res) => {
   try {
