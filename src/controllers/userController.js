@@ -23,7 +23,7 @@ exports.getUsers = async (req, res) => {
       };
     }
 
-    const users = await User.find(query)
+    const users = await User.find(query, "-password")
       .skip((page - 1) * limit)
       .limit(parseInt(limit))
       .sort({ createdAt: -1 });
