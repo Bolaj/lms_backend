@@ -1,7 +1,9 @@
 const express = require('express')
 const userRouter = require('./routes/userRoutes')
+const adminRouter = require("./routes/adminRoutes")
 const courseRouter = require('./routes/courseRoutes')
 const assignmentRouter = require('./routes/assignmentRoutes')
+
 
 const appRouter = express()
 
@@ -12,4 +14,8 @@ appRouter.use('/lms/dev', (req, res) =>{
     res.send('Development API')
 })
 
-module.exports = appRouter;
+appRouter.use("/lms", adminRouter)
+
+
+module.exports = appRouter
+
