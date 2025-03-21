@@ -116,6 +116,39 @@ exports.resendVerificationCode = async (req, res) => {
       .json({ message: "Server error", error: error.message });
   }
 };
+exports.signIn = async (req,res) => {
+  try {
+    let { email, password } = req.body
+    let singleUser = await User.findOne ({
+      email
+    })
+
+    if (singleUser) {
+      let isEqual = await bcrypt.compare(password, singleUser.password);
+      if(isEqual) {
+        let token = jwt.sign({
+          id: singleUser._id
+        }, process.env.JWT_SECRET);
+      res.json ({
+        message:
+            "User logged in successfully",
+        token
+        })
+
+      } else {
+        return res.status(404).json({ message: "Log in failed" });
+      }
+    } else {
+      return res.status(404).json({ message: "User not found" });
+    }
+  } catch(error) {
+    console.error(error.message);
+    res.status(500).json({
+      msg: error.message,
+    });
+
+  }
+}
 
 
 exports.deleteUser = async (req, res) => {

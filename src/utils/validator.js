@@ -1,4 +1,5 @@
 const { check } = require("express-validator");
+const jwt = require("jsonwebtoken");
 
 exports.validateSignup = [
   check("firstName", "First name is required").not().isEmpty(),
@@ -8,3 +9,4 @@ exports.validateSignup = [
   check("phone", "Invalid phone number").optional().isNumeric().isLength({ min: 10, max: 15 }),
   check("role", "Invalid role").optional().isIn(["student", "teacher", "admin"]),
 ];
+
