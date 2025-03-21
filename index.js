@@ -21,3 +21,9 @@ app.use("/api/assignments", assignmentRouter);
 const port = process.env.PORT
 
 app.listen(port, () => console.log("App listening on port", port))
+
+app.get('/', (req, res) => {
+  return res.status(200).json({
+    message: "Welcome to LMS API!"
+  })
+})
