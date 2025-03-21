@@ -3,7 +3,7 @@ const courseRouter = require('./src/routes/courseRoutes');
 const assignmentRouter = require('./src/routes/assignmentRoutes');
 
 const app = express()
-const db = require('./src/config/db')
+const db = require('./src/config/db');
 db()
 
 app.use(express.json())

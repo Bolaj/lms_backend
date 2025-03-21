@@ -116,3 +116,71 @@ exports.resendVerificationCode = async (req, res) => {
       .json({ message: "Server error", error: error.message });
   }
 };
+exports.signIn = async (req,res) => {
+  try {
+    let { email, password } = req.body
+    let singleUser = await User.findOne ({
+      email
+    })
+
+    if (singleUser) {
+      let isEqual = await bcrypt.compare(password, singleUser.password);
+      if(isEqual) {
+        let token = jwt.sign({
+          id: singleUser._id
+        }, process.env.JWT_SECRET);
+      res.json ({
+        message:
+            "User logged in successfully",
+        token
+        })
+
+      } else {
+        return res.status(404).json({ message: "Log in failed" });
+      }
+    } else {
+      return res.status(404).json({ message: "User not found" });
+    }
+  } catch(error) {
+    console.error(error.message);
+    res.status(500).json({
+      msg: error.message,
+    });
+
+  }
+}
+
+
+exports.deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await User.findByIdAndDelete(id);
+    return res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
+
+exports.updateUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { firstName, lastName, email, password, phoneNumber, role } = req.body;
+
+    const user = await User.findById(id);
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    if (firstName) user.firstName = firstName;
+    if (lastName) user.lastName = lastName;
+    if (email) user.email = email;
+    if (phoneNumber) user.phoneNumber = phoneNumber;
+    if (password) user.password = await bcrypt.hash(password, 10);
+    if (role && req.user.role === "admin") user.role = role; 
+    await user.save();
+
+    return res.status(200).json({ message: "User updated successfully", user });
+  } catch (error) {
+    return res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+ 
