@@ -127,10 +127,15 @@ exports.signIn = async (req,res) => {
     if (singleUser) {
       let isEqual = await bcrypt.compare(password, singleUser.password);
       if(isEqual) {
-        return res.status(201).json({
-          message:
-            "User logged in successfully"
-        });
+        let token = jwt.sign({
+          id: singleUser._id
+        }, process.env.JWT_SECRET);
+      res.json ({
+        message:
+            "User logged in successfully",
+        token
+        })
+
       } else {
         return res.status(404).json({ message: "Log in failed" });
       }
