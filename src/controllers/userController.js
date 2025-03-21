@@ -116,3 +116,32 @@ exports.resendVerificationCode = async (req, res) => {
       .json({ message: "Server error", error: error.message });
   }
 };
+
+exports.signIn = async (req,res) => {
+  try {
+    let { email, password } = req.body
+    let singleUser = await User.findOne ({
+      email
+    })
+
+    if (singleUser) {
+      let isEqual = await bcrypt.compare(password, singleUser.password);
+      if(isEqual) {
+        return res.status(201).json({
+          message:
+            "User logged in successfully"
+        });
+      } else {
+        return res.status(404).json({ message: "Log in failed" });
+      }
+    } else {
+      return res.status(404).json({ message: "User not found" });
+    }
+  } catch(error) {
+    console.error(error.message);
+    res.status(500).json({
+      msg: error.message,
+    });
+
+  }
+}
