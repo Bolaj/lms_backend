@@ -7,7 +7,7 @@ const assignmentRouter = require('./routes/assignmentRoutes')
 
 const appRouter = express()
 
-appRouter.use('/user', userRouter)
+appRouter.use('/lms', userRouter)
 appRouter.use('/course', courseRouter)
 appRouter.use('/assignment', assignmentRouter)
 appRouter.use('/lms/dev', (req, res) =>{
