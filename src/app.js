@@ -8,8 +8,8 @@ const assignmentRouter = require('./routes/assignmentRoutes')
 const appRouter = express()
 
 appRouter.use('/lms', userRouter)
-appRouter.use('/course', courseRouter)
-appRouter.use('/assignment', assignmentRouter)
+appRouter.use('/lms/courses', courseRouter)
+appRouter.use('/lms/assignment', assignmentRouter)
 appRouter.use('/lms/dev', (req, res) =>{
     res.send('Development API')
 })
