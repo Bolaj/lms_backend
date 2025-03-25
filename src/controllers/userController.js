@@ -136,7 +136,7 @@ exports.signIn = async (req,res) => {
         })
 
       } else {
-        return res.status(404).json({ message: "Log in failed" });
+        return res.status(404).json({ message: "Incorrect Login Details" });
       }
     } else {
       return res.status(404).json({ message: "User not found" });
@@ -167,6 +167,9 @@ exports.updateUser = async (req, res) => {
     const { id } = req.params;
     const { firstName, lastName, email, password, phoneNumber, role } = req.body;
 
+    if (!firstName && !lastName && !email && !password && !phoneNumber && !role) {
+      return res.status(400).json({ message: "No fields provided to update" });
+    }
     const user = await User.findById(id);
     if (!user) return res.status(404).json({ message: "User not found" });
 
@@ -183,4 +186,4 @@ exports.updateUser = async (req, res) => {
     return res.status(500).json({ message: "Server error", error: error.message });
   }
 };
- 
+
