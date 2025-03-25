@@ -48,8 +48,8 @@ exports.verifyUser = async (req, res, next) =>{
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findById(decoded.id);
 
-        if(!user || user.role !== "admin" || user.role === "teacher"){
-            return res.status(401).json({message: "Unauthorized, You can't create a course"});
+        if (!user || (user.role !== "admin" && user.role !== "teacher")) {
+            return res.status(401).json({ message: "Unauthorized, You can't perform this operation" });
         }
 
         req.user = user;
@@ -59,3 +59,25 @@ exports.verifyUser = async (req, res, next) =>{
         res.status(401).json({ message: "Invalid or expired token" });
     }
 }
+
+exports.verifyToken = async (req, res, next) =>{
+    try {
+        const token = req.headers.authorization?.split(" ")[1];
+        if (!token) {
+          return res.status(401).json({ message: "No token provided" });
+        }
+    
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.id);
+        if (!user) {
+          return res.status(401).json({ message: "User not found" });
+        }
+    
+        req.user = user; 
+        next();
+      } catch (err) {
+        console.error(err);
+        res.status(401).json({ message: "Invalid or expired token" });
+      }
+}
+  
