@@ -1,10 +1,11 @@
 const express = require("express");
-//const { authMiddleware } = require("../auth/authMiddleware");
+const { verifyUser } = require("../auth/verifyAdminMiddleware");
 const { createAssignment, getAssignments, submitAssignment } = require("../controllers/assignmentController");
 
 const assignmentRouter = express.Router();
 
-assignmentRouter.post("/", createAssignment);
+
+assignmentRouter.post("/", verifyUser, createAssignment);
 assignmentRouter.get("/", getAssignments);
 assignmentRouter.post("/:assignmentId/submit", submitAssignment);
 
