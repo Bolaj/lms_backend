@@ -242,7 +242,7 @@ paths:
             type: string
           description: Course Code
       security:
-        - bearerAuth: [] # Require Bearer Token for this endpoint
+        - bearerAuth: [] 
       responses:
         "200":
           description: Enrolled in Course Successfully
@@ -252,3 +252,363 @@ paths:
           description: Course not found
         "409":
           description: Already enrolled in course
+
+  /courses:
+    post:
+      tags:
+        - Course
+      summary: Create Course Endpoint
+      description: Allows a teacher or admin to create a new course.
+      security:
+        - bearerAuth: [] 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Course"
+      responses:
+        "201":
+          description: Course Created Successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Course"
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+        "409":
+          description: Course already exists
+  /courses/:
+    get:
+      tags:
+        - Course
+      summary: Get All Courses
+      description: Fetch all courses. Only teachers or admins can access this endpoint.
+      security:
+        - bearerAuth: [] 
+      responses:
+        "200":
+          description: Courses fetched successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Course"
+        "401":
+          description: Unauthorized
+        "500":
+          description: Server error
+    
+  /courses/{courseCode}:
+    put:
+      tags:
+        - Course
+      summary: Update Course Endpoint
+      description: Allows a teacher or admin to update an existing course.
+      parameters:
+        - name: courseCode
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique code of the course to update.
+      security:
+        - bearerAuth: [] # Require Bearer Token for this endpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Updated Course Title
+                description:
+                  type: string
+                  example: Updated course description.
+                teacher:
+                  type: string
+                  example: 605c72f65b3c4e1a88d9f123
+      responses:
+        "200":
+          description: Course Updated Successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Course"
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+        "404":
+          description: Course not found
+
+  /courses/{courseCode}/soft-delete:
+    patch:
+      tags:
+        - Course
+      summary: Soft Delete Course Endpoint
+      description: Allows a teacher or admin to soft delete a course (mark it as inactive).
+      parameters:
+        - name: courseCode
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique code of the course to soft delete.
+      security:
+        - bearerAuth: [] # Require Bearer Token for this endpoint
+      responses:
+        "200":
+          description: Course Soft Deleted Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Course soft deleted successfully.
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+        "404":
+          description: Course not found
+
+  /courses/{courseCode}/delete:
+      delete:
+        tags:
+        - Course
+      summary: Delete Course Endpoint
+      description: Allows an admin to permanently delete a course.
+      parameters:
+        - name: courseCode
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique code of the course to delete.
+      security:
+        - bearerAuth: [] 
+      responses:
+        "200":
+          description: Course Deleted Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Course deleted successfully.
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+        "404":
+          description: Course not found
+      
+  /admin/get-users:
+    get:
+      tags:
+        - Admin
+      summary: Get All Users
+      description: Allows an admin to fetch all users with optional search and pagination.
+      security:
+        - bearerAuth: [] 
+      parameters:
+        - name: search
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Search users by name, email, or role.
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            example: 1
+          description: Page number for pagination.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            example: 10
+          description: Number of users per page.
+      responses:
+        "200":
+          description: Users fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalUsers:
+                    type: integer
+                    example: 100
+                  currentPage:
+                    type: integer
+                    example: 1
+                  totalPages:
+                    type: integer
+                    example: 10
+                  users:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+
+  /admin/delete-user/{id}:
+    delete:
+      tags:
+        - Admin
+      summary: Delete User
+      description: Allows an admin to delete a user by their ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the user to delete.
+      security:
+        - bearerAuth: [] # Require Bearer Token for this endpoint
+      responses:
+        "200":
+          description: User Deleted Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User deleted successfully.
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+        "404":
+          description: User not found
+
+  /admin/assign-role:
+    patch:
+      tags:
+        - Admin
+      summary: Assign Role to User
+      description: Allows an admin to assign a role to a user.
+      security:
+        - bearerAuth: [] 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 605c72f65b3c4e1a88d9f123
+                role:
+                  type: string
+                  enum: [student, teacher, admin]
+                  example: teacher
+      responses:
+        "200":
+          description: Role Assigned Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Role assigned successfully.
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+        "404":
+          description: User not found
+
+  /assignment:
+    post:
+      tags:
+        - Assignment
+      summary: Create Assignment Endpoint
+      description: Allows a teacher to create a new assignment for a course.
+      security:
+        - bearerAuth: [] # Require Bearer Token for this endpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Assignment 1
+                description:
+                  type: string
+                  example: Complete the exercises in Chapter 3.
+                dueDate:
+                  type: string
+                  format: date
+                  example: 2025-03-30
+                course:
+                  type: string
+                  example: 605c72f65b3c4e1a88d9f123
+              required:
+                - title
+                - description
+                - dueDate
+                - course
+      responses:
+        "201":
+          description: Assignment Created Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Assignment created successfully.
+                  assignment:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 605c72f65b3c4e1a88d9f456
+                      title:
+                        type: string
+                        example: Assignment 1
+                      description:
+                        type: string
+                        example: Complete the exercises in Chapter 3.
+                      dueDate:
+                        type: string
+                        format: date
+                        example: 2025-03-30
+                      course:
+                        type: string
+                        example: 605c72f65b3c4e1a88d9f123
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+        "403":
+          description: Only teachers can create assignments
+        "404":
+          description: Course not found
