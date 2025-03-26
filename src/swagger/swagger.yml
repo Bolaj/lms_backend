@@ -198,6 +198,92 @@ paths:
         "409":
           description: User already verified
 
+  /user/forgot-password:
+    post:
+      tags:
+        - User
+      summary: Forgot Password Endpoint
+      description: Allows a user to request a password reset. A reset token will be sent to the user's email.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: test@example.com
+              required:
+                - email
+      responses:
+        "200":
+          description: Password reset email sent successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Password reset email sent successfully.
+        "400":
+          description: Invalid input
+        "404":
+          description: User not found
+        "500":
+          description: Server error
+
+  /user/reset-password/{token}:
+    post:
+      tags:
+        - User
+      summary: Reset Password Endpoint
+      description: Allows a user to reset their password using a valid reset token.
+      parameters:
+        - name: token
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The reset token sent to the user's email.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                newPassword:
+                  type: string
+                  format: password
+                  example: newpassword123
+                confirmPassword:
+                  type: string
+                  format: password
+                  example: newpassword123
+              required:
+                - newPassword
+                - confirmPassword
+      responses:
+        "200":
+          description: Password reset successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Password reset successfully.
+        "400":
+          description: Invalid input or token expired
+        "404":
+          description: User not found
+        "500":
+          description: Server error
+
   /user/update/{id}:
     put:
       tags:
@@ -211,7 +297,7 @@ paths:
             type: string
           description: User ID
       security:
-        - bearerAuth: [] # Require Bearer Token for this endpoint
+        - bearerAuth: [] 
       requestBody:
         required: true
         content:
