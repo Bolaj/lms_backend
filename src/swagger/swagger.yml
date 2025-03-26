@@ -1,0 +1,254 @@
+openapi: 3.0.0
+info:
+  title: Learning Management System (LMS) Docs
+  version: 1.0.0
+  description: API documentation for the Learning Management System (LMS) Backend Group 1
+
+servers:
+  - url: http://localhost:4000/api/lms
+
+components:
+ securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+ schemas:
+    User:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          example: test@example.com
+        password:
+          type: string
+          format: password
+          example: password123
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: Doe
+        role:
+          type: string
+          enum: [student, teacher, admin]
+          example: student
+        isVerified:
+          type: boolean
+          example: false
+        verificationCode:
+          type: string
+          example: ABC123
+        createdAt:
+          type: string
+          format: date-time
+          example: 2025-03-26T12:00:00.000Z
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2025-03-26T12:00:00.000Z
+      required:
+        - email
+        - password
+        - firstName
+        - lastName
+    
+    Course:
+      type: object
+      properties:
+        courseCode:
+          type: string
+          example: CSC 101
+        title:
+          type: string
+          example: Introduction to Programming
+        description:
+          type: string
+          example: Learn the basics of programming.
+        teacher:
+          type: string
+          example: 605c72f65b3c4e1a88d9f123
+        students:
+          type: array
+          items:
+            type: string
+            example: 605c72f65b3c4e1a88d9f456
+        createdAt:
+          type: string
+          format: date-time
+          example: 2025-03-26T12:00:00.000Z
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2025-03-26T12:00:00.000Z
+      required:
+        - courseCode
+        - title
+        - teacher
+
+paths:
+  /user/signup:
+    post:
+      tags:
+        - User
+      summary: User Signup Endpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "200":
+          description: Signed Up Successfully. Check your email for verification code.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid input
+        "409":
+          description: User already exists
+  /user/verify-account:
+    post:
+      tags:
+        - User
+      summary: Verify User Account Endpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: test@example.com
+                verificationCode:
+                  type: string
+                  example: ABC123
+      responses:
+        "200":
+          description: Account Verified Successfully
+        "400":
+          description: Invalid input
+        "404":
+          description: User not found
+        "409":
+          description: User already verified
+  /user/signin:
+    post:
+      tags:
+        - User
+      summary: User Login Endpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: test@example.com
+                password:
+                  type: string
+                  format: password
+                  example: password123
+      responses:
+        "200":
+          description: Logged In Successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+  /user/resend-verification-code:
+    post:
+      tags:
+        - User
+      summary: Resend Verification Code Endpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: test@example.com
+
+      responses:
+        "200":
+          description: Verification Code Resent Successfully
+        "400":
+          description: Invalid input
+        "404":
+          description: User not found
+        "409":
+          description: User already verified
+
+  /user/update/{id}:
+    put:
+      tags:
+        - User
+      summary: Update User Endpoint
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: User ID
+      security:
+        - bearerAuth: [] # Require Bearer Token for this endpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "200":
+          description: User Updated Successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid input
+        "404":
+          description: User not found
+
+  /courses/{courseCode}/enroll:
+    post:
+      tags:
+        - Course
+      summary: Student Enroll in a Course Endpoint
+      parameters:
+        - name: courseCode
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Course Code
+      security:
+        - bearerAuth: [] # Require Bearer Token for this endpoint
+      responses:
+        "200":
+          description: Enrolled in Course Successfully
+        "400":
+          description: Invalid input
+        "404":
+          description: Course not found
+        "409":
+          description: Already enrolled in course
