@@ -1,17 +1,17 @@
 const Course = require("../models/Course");
 
 exports.createCourse = async (req, res) => {
-  if (req.user.role !== "teacher" && req.user.role !== "admin") {
-    return res.status(403).json({ msg: "Access denied! Only Aeachers and Admins are authorzed to create Courses" });
-  }
+  //if (req.user.role !== "teacher" && req.user.role !== "admin") {
+   // return res.status(403).json({ msg: "Access denied! Only Aeachers and Admins are authorzed to create Courses" });
+  //}
 
-  const { title, description } = req.body;
+  const { title, description, courseCode } = req.body;
   try {
     const course = new Course({
         courseCode,
         title,
         description,
-        teacher: req.user.role === "teacher" ? req.user.id : teacherId,
+        //teacher: req.user.role === "teacher" ? req.user.id : teacherId,
     });
 
     await course.save();
