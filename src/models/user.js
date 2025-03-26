@@ -32,6 +32,8 @@ const UserSchema = new mongoose.Schema(
     isVerified: { type: Boolean, default: false },
     verificationCode: { type: String },
     verificationCodeExpires: Date,
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
     role: {
       type: String,
       enum: ["student", "teacher", "admin"],
