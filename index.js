@@ -4,7 +4,12 @@ const YAML = require('yamljs')
 const swaggerDocs = YAML.load('./src/swagger/swagger.yml')
 const cors = require('cors')
 
-
+const cron = require('node-cron')
+const { sendAssignmentReminders } = require('./src/controllers/assignmentController')
+cron.schedule("0 * * * *", async () => {
+  console.log("Running reminder job...");
+  await sendAssignmentReminders();
+});
 const app = express()
 const db = require('./src/config/db');
 db()
