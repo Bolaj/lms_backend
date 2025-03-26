@@ -82,7 +82,7 @@ exports.sendAssignmentReminders = async () => {
     const twoHoursBefore = now.add(2, "hours").toDate();
 
     const assignments = await Assignment.find({
-      dueDate: { $gte: now.toDate(), $lte: oneDayBefore },
+      dueDate: { $gte: now.toDate(), $lte: oneDayBefore , twoHoursBefore},
     }).populate("course", "title students");
 
     for (const assignment of assignments) {
