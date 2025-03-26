@@ -72,3 +72,40 @@ exports.submitAssignment = async (req, res) => {
     res.status(500).send("Server error");
   }
 };
+const cron = require("node-cron");
+const moment = require("moment");
+
+exports.sendAssignmentReminders = async () => {
+  try {
+    const now = moment();
+    const oneDayBefore = now.add(1, "days").toDate();
+    const twoHoursBefore = now.add(2, "hours").toDate();
+
+    const assignments = await Assignment.find({
+      dueDate: { $gte: now.toDate(), $lte: oneDayBefore },
+    }).populate("course", "title students");
+
+    for (const assignment of assignments) {
+      const courseDetails = await Course.findById(assignment.course._id).populate(
+        "students",
+        "email"
+      );
+
+      if (!courseDetails) continue;
+
+      const studentEmails = courseDetails.students.map((student) => student.email);
+      const emailSubject = `Reminder: Assignment "${assignment.title}" is due soon`;
+      const emailText = `This is a reminder that the assignment "${assignment.title}" for the course "${courseDetails.title}" is due on ${moment(
+        assignment.dueDate
+      ).format("YYYY-MM-DD HH:mm")}. Please ensure you submit it on time.`;
+
+      for (const email of studentEmails) {
+        await sendEmail(email, emailSubject, emailText);
+      }
+    }
+
+    console.log("Reminders sent successfully.");
+  } catch (err) {
+    console.error("Error sending reminders:", err);
+  }
+};
