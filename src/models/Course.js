@@ -14,6 +14,8 @@ const CourseSchema = new mongoose.Schema(
         ref: "User", 
         required: true 
     },
+    deleted: { type: Boolean, default: false }, 
+
     students: [{ 
         type: mongoose.Schema.Types.ObjectId, 
         ref: "User" 

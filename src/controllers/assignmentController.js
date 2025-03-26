@@ -1,4 +1,6 @@
 const Assignment = require("../models/Assignment");
+const { sendEmail } = require("../utils/emailService");
+const Course = require('../models/Course')
 
 exports.createAssignment = async (req, res) => {
   if (req.user.role !== "teacher") {
@@ -15,7 +17,21 @@ exports.createAssignment = async (req, res) => {
     });
 
     await assignment.save();
-    res.status(201).json(assignment);
+
+    const courseDetails = await Course.findById(course).populate("students", "email");
+    if (!courseDetails) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
+    const studentEmails = courseDetails.students.map((student) => student.email);
+    const emailSubject = `New Assignment: ${title}`;
+    const emailText = `A new assignment has been created for the course "${courseDetails.title}".\n\nTitle: ${title}\nDescription: ${description}\nDue Date: ${dueDate}\n\nPlease log in to your account to view and submit the assignment.`;
+
+    for (const email of studentEmails) {
+      await sendEmail(email, emailSubject, emailText);
+    }
+
+    res.status(201).json({ message: "Assignment created and emails sent", assignment });
   } catch (err) {
     console.error(err);
     res.status(500).send("Server error");

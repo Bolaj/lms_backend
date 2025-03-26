@@ -78,9 +78,41 @@ exports.deleteTeacher = async (req, res) => {
 
 exports.getAllUsers = async (req, res) => {
     try {
-      const users = await User.find({}, "-password");
-      res.status(200).json(users);
+      const { search, page = 1, limit = 10 } = req.query;
+  
+      let query = {};
+      if (search) {
+        const isObjectId = /^[0-9a-fA-F]{24}$/.test(search);
+  
+        if (isObjectId) {
+          query = { _id: search };
+        } else {
+          query = {
+            $or: [
+              { firstName: { $regex: search, $options: "i" } },
+              { lastName: { $regex: search, $options: "i" } },
+              { phoneNumber: { $regex: search, $options: "i" } },
+              { email: { $regex: search, $options: "i" } },
+            ],
+          };
+        }
+      }
+  
+      const users = await User.find(query, "-password")
+        .skip((page - 1) * limit)
+        .limit(parseInt(limit))
+        .sort({ createdAt: -1 });
+  
+      const totalUsers = await User.countDocuments(query);
+  
+      res.json({
+        totalUsers,
+        currentPage: parseInt(page),
+        totalPages: Math.ceil(totalUsers / limit),
+        users,
+      });
     } catch (error) {
-      res.status(500).json({ message: "Error fetching users", error: error.message });
+      console.error(error.message);
+      res.status(500).json({ msg: error.message });
     }
-  }
+  };
