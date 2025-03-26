@@ -11,6 +11,11 @@ db()
 app.use(express.json())
 app.use(cors());
 
+const corsOptions = {
+  origin: 'https://lms-backend-vb2k.onrender.com', 
+};
+app.use(cors(corsOptions));
+
 const dotenv = require('dotenv')
 dotenv.config()
 
