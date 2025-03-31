@@ -7,6 +7,7 @@ info:
 servers:
   - url: http://localhost:4000/api/lms
   - url: https://lms-backend-vb2k.onrender.com/api/lms
+  - url: https://lms-backend-4bt0.onrender.com/api/lms
 
 components:
  securitySchemes:
