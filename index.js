@@ -4,6 +4,8 @@ const YAML = require('yamljs')
 const swaggerDocs = YAML.load('./src/swagger/swagger.yml')
 const cors = require('cors')
 
+const scheduleCronJobs = require('./src/cronJobs')
+
 const app = express()
 const db = require('./src/config/db');
 db()
@@ -18,6 +20,8 @@ app.use(cors(corsOptions));
 
 const dotenv = require('dotenv')
 dotenv.config()
+
+scheduleCronJobs()
 
 const appRouter = require('./src/app');
 app.use("/api", appRouter)

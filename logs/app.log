@@ -1,0 +1,104 @@
+[2025-03-29 01:08:55] INFO: User SignUp called
+[2025-03-29 01:08:56] WARN: User already exists with email: gauthor0@gmail.com
+[2025-03-29 01:09:22] INFO: User SignUp called
+[2025-03-29 01:09:24] INFO: New user created with email: gauthor0@gmail.co
+[2025-03-29 01:09:27] INFO: Verification email sent to: gauthor0@gmail.co
+[2025-03-29 01:13:43] INFO: User SignUp called
+[2025-03-29 01:13:43] WARN: Validation errors in signUp: [{"type":"field","value":"gauthor0@gmail.c","msg":"Valid email is required","path":"email","location":"body"}]
+[2025-03-29 01:14:03] INFO: User SignUp called
+[2025-03-29 01:14:03] WARN: User already exists with email: gauthor0@gmail.co
+[2025-03-29 01:14:15] INFO: User SignUp called
+[2025-03-29 01:14:15] WARN: Validation errors in signUp: [{"type":"field","value":"gauthor0@gmail","msg":"Valid email is required","path":"email","location":"body"}]
+[2025-03-29 01:16:58] INFO: User SignUp called
+[2025-03-29 01:16:58] WARN: Validation errors in signUp: [{"type":"field","value":"gauthor0@gmail","msg":"Valid email is required","path":"email","location":"body"}]
+[2025-03-29 01:17:12] INFO: User SignUp called
+[2025-03-29 01:17:12] WARN: Validation errors in signUp: [{"type":"field","value":"gauthor0@gmail.c","msg":"Valid email is required","path":"email","location":"body"}]
+[2025-03-29 01:17:18] INFO: User SignUp called
+[2025-03-29 01:17:19] WARN: User already exists with email: gauthor0@gmail.co
+[2025-03-29 01:19:24] INFO: User SignUp called
+[2025-03-29 01:19:24] WARN: User already exists with email: gauthor0@gmail.co
+[2025-03-29 01:19:37] INFO: User SignUp called
+[2025-03-29 01:19:37] WARN: Validation errors in signUp: [{"type":"field","value":"gauthor0@gmail.o","msg":"Valid email is required","path":"email","location":"body"}]
+[2025-03-30 23:57:54] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:00:00] INFO: Running reminder job...
+[2025-03-31 00:00:01] INFO: Assignment reminders sent successfully.
+[2025-03-31 00:03:20] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:07:34] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:09:51] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:18:26] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:19:00] INFO: Running reminder job...
+[2025-03-31 00:19:00] INFO: sendAssignmentReminders function called
+[2025-03-31 00:19:00] INFO: Assignment reminders sent successfully.
+[2025-03-31 00:20:00] INFO: Running reminder job...
+[2025-03-31 00:20:00] INFO: sendAssignmentReminders function called
+[2025-03-31 00:20:00] INFO: Assignment reminders sent successfully.
+[2025-03-31 00:21:00] INFO: Running reminder job...
+[2025-03-31 00:21:00] INFO: sendAssignmentReminders function called
+[2025-03-31 00:21:01] INFO: Assignment reminders sent successfully.
+[2025-03-31 00:22:00] INFO: Running reminder job...
+[2025-03-31 00:22:00] INFO: sendAssignmentReminders function called
+[2025-03-31 00:22:01] INFO: Assignment reminders sent successfully.
+[2025-03-31 00:30:31] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:48:00] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:52:15] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:55:35] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:56:51] INFO: Cron jobs scheduled successfully.
+[2025-03-31 00:58:05] INFO: Cron jobs scheduled successfully.
+[2025-03-31 01:00:00] INFO: submitAssignment Endpoint called
+[2025-03-31 01:00:00] WARN: Unauthorized access attempt to submitAssignment
+[2025-03-31 01:01:01] INFO: submitAssignment Endpoint called
+[2025-03-31 01:01:01] WARN: Unauthorized access attempt to submitAssignment
+[2025-03-31 01:02:00] INFO: Running reminder job...
+[2025-03-31 01:02:00] INFO: sendAssignmentReminders function called
+[2025-03-31 01:02:04] INFO: Reminders sent successfully.
+[2025-03-31 01:02:04] INFO: Assignment reminders sent successfully.
+[2025-03-31 01:05:24] INFO: submitAssignment Endpoint called
+[2025-03-31 01:05:24] WARN: Due date passed for assignment ID: 67e40fb377d63f916f2cdd8b
+[2025-03-31 01:27:36] INFO: Cron jobs scheduled successfully.
+[2025-03-31 01:27:45] INFO: submitAssignment Endpoint called
+[2025-03-31 01:27:45] WARN: Due date passed for assignment ID: 67e40fb377d63f916f2cdd8b
+[2025-03-31 01:28:27] INFO: Cron jobs scheduled successfully.
+[2025-03-31 01:32:08] INFO: Cron jobs scheduled successfully.
+[2025-03-31 01:34:09] INFO: createAssignment Endpoint called
+[2025-03-31 01:34:09] WARN: Unauthorized access attempt to createAssignment
+[2025-03-31 01:36:02] INFO: User SignUp called
+[2025-03-31 01:36:03] INFO: New user created with email: timil.bolaji@gmail.com
+[2025-03-31 01:36:04] INFO: Verification email sent to: timil.bolaji@gmail.com
+[2025-03-31 01:37:00] INFO: Cron jobs scheduled successfully.
+[2025-03-31 09:21:08] INFO: Cron jobs scheduled successfully.
+[2025-03-31 09:21:31] INFO: createAssignment Endpoint called
+[2025-03-31 09:21:31] INFO: Assignment created successfully
+[2025-03-31 09:21:31] INFO: Sending email to: aduragbemioa@gmail.com
+[2025-03-31 09:21:32] INFO: Sending email to: timilehin.bolaji33@gmail.com
+[2025-03-31 09:21:33] INFO: Emails sent successfully
+[2025-03-31 11:02:00] INFO: Running reminder job...
+[2025-03-31 11:02:00] INFO: sendAssignmentReminders function called
+[2025-03-31 11:02:11] INFO: Reminders sent successfully.
+[2025-03-31 11:02:11] INFO: Assignment reminders sent successfully.
+[2025-03-31 14:25:22] INFO: Cron jobs scheduled successfully.
+[2025-03-31 14:25:53] INFO: Cron jobs scheduled successfully.
+[2025-03-31 14:25:59] INFO: createAssignment Endpoint called
+[2025-03-31 14:25:59] INFO: Assignment created successfully
+[2025-03-31 14:26:00] INFO: Attempting to send email to: aduragbemioa@gmail.com
+[2025-03-31 14:26:01] INFO: Email sent successfully to: aduragbemioa@gmail.com
+[2025-03-31 14:26:01] INFO: Attempting to send email to: timilehin.bolaji33@gmail.com
+[2025-03-31 14:26:02] INFO: Email sent successfully to: timilehin.bolaji33@gmail.com
+[2025-03-31 14:26:02] INFO: All email attempts completed
+[2025-03-31 14:30:28] INFO: User SignUp called
+[2025-03-31 14:30:29] INFO: New user created with email: mattybolaji@gmail.com
+[2025-03-31 14:30:30] INFO: Verification email sent to: mattybolaji@gmail.com
+[2025-03-31 14:34:21] INFO: Cron jobs scheduled successfully.
+[2025-03-31 14:34:27] INFO: User SignUp called
+[2025-03-31 14:34:34] WARN: User already exists with email: mattybolaji@gmail.com
+[2025-03-31 14:35:29] INFO: Cron jobs scheduled successfully.
+[2025-03-31 15:02:02] INFO: Cron jobs scheduled successfully.
+[2025-03-31 15:03:06] INFO: User SignUp called
+[2025-03-31 15:03:06] INFO: New user created with email: mattybolaji@gmail.com
+[2025-03-31 15:03:08] INFO: Verification email sent to: mattybolaji@gmail.com
+[2025-03-31 15:07:30] INFO: Cron jobs scheduled successfully.
+[2025-03-31 15:16:26] INFO: Cron jobs scheduled successfully.
+[2025-03-31 15:16:28] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-03-31 23:11:43] INFO: Cron jobs scheduled successfully.
+[2025-03-31 23:11:44] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-03-31 23:14:36] INFO: User SignUp called
+[2025-03-31 23:14:37] WARN: User already exists with email: mattybolaji@gmail.com
