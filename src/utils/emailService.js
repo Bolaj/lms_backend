@@ -1,4 +1,6 @@
 const nodemailer = require("nodemailer");
+const logger = require('./logger')
+
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -9,7 +11,13 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
-
+transporter.verify((error, success) => {
+  if (error) {
+    logger.error("Error verifying SMTP connection: " + error.message);
+  } else {
+    logger.info("SMTP connection verified successfully.");
+  }
+});
 
 exports.sendEmail = async (to, subject, text) => {
     try {
@@ -19,8 +27,8 @@ exports.sendEmail = async (to, subject, text) => {
         subject,
         text,
       });
-      console.log(`Email sent to ${to}`);
+      logger.info(`Email sent to ${to}`);
     } catch (error) {
-      console.error("Error sending email:", error);
+      logger.error("Error sending email:", error);
     }
   };
