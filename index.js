@@ -11,7 +11,29 @@ const db = require('./src/config/db');
 db()
 
 app.use(express.json())
-app.use(cors());
+
+const allowedOrigins = [
+  "https://lms-backend-vb2k.onrender.com", 
+  "https://lms-backend-4bt0.onrender.com",
+  "http://localhost:4000", 
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true); 
+    } else {
+      callback(new Error("Not allowed by CORS")); 
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true, 
+};
+
+app.use(cors(corsOptions));
 
 const dotenv = require('dotenv')
 dotenv.config()
