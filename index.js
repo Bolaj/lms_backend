@@ -35,11 +35,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-const corsOptions = {
-  origin: 'https://lms-backend-vb2k.onrender.com', 
-};
-app.use(cors(corsOptions));
-
 const dotenv = require('dotenv')
 dotenv.config()
 
