@@ -102,3 +102,20 @@
 [2025-03-31 23:11:44] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
 [2025-03-31 23:14:36] INFO: User SignUp called
 [2025-03-31 23:14:37] WARN: User already exists with email: mattybolaji@gmail.com
+[2025-03-31 23:46:08] INFO: Cron jobs scheduled successfully.
+[2025-03-31 23:46:10] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-03-31 23:47:18] INFO: User SignUp called
+[2025-03-31 23:47:18] WARN: User already exists with email: mattybolaji@gmail.com
+[2025-04-01 00:02:00] INFO: Running reminder job...
+[2025-04-01 00:02:00] INFO: sendAssignmentReminders function called
+[2025-04-01 00:02:03] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:03] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:04] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:05] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:06] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:07] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:07] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:08] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:08] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 00:02:08] INFO: Reminders sent successfully.
+[2025-04-01 00:02:08] INFO: Assignment reminders sent successfully.
