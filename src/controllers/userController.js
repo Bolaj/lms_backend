@@ -3,21 +3,25 @@ const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { sendEmail } = require("../utils/emailService");
+const logger = require("../utils/logger");
 const generateVerificationCode = () =>
   crypto.randomInt(100000, 999999).toString();
 const { validationResult } = require("express-validator");
 
 exports.signUp = async (req, res) => {
   try {
+    logger.info("User SignUp called");
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      logger.warn("Validation errors in signUp: " + JSON.stringify(errors.array()));
       return res.status(400).json({ errors: errors.array() });
     }
-    const { firstName, lastName, email, password, phoneNumber, role } =
-      req.body;
+    const { firstName, lastName, email, password, phoneNumber, role } = req.body;
     const existingUser = await User.findOne({ email: email });
-    if (existingUser)
+    if (existingUser) {
+      logger.warn(`User already exists with email: ${email}`);
       return res.status(400).json({ msg: "User already exists" });
+    }
     const hashedPassword = await bcrypt.hash(password, 10);
     const verificationCode = generateVerificationCode();
     const verificationCodeExpires = new Date(Date.now() + 10 * 60 * 1000);
@@ -32,17 +36,20 @@ exports.signUp = async (req, res) => {
       verificationCode,
       verificationCodeExpires,
     }).save();
+    logger.info(`New user created with email: ${email}`);
     await sendEmail(
       email,
       "Account Verification Code",
       `Your verification code is: ${verificationCode}. It expires in 10 minutes.`
     );
+    logger.info(`Verification email sent to: ${email}`);
+
     return res.status(201).json({
       message:
         "Signed Up Successfully. Check your email for the verification code.",
     });
   } catch (error) {
-    console.error(error.message);
+    logger.error("Error in signUp: " + error.message);
     res.status(500).json({
       msg: error.message,
     });
@@ -50,20 +57,29 @@ exports.signUp = async (req, res) => {
 };
 exports.verifyAccount = async (req, res) => {
   try {
+    logger.info("verifyAccount function called");
     const { email, verificationCode } = req.body;
     const user = await User.findOne({ email });
 
-    if (!user) return res.status(404).json({ message: "User not found" });
-    if (user.isVerified)
+    if (!user) {
+      logger.warn(`User not found with email: ${email}`);
+      return res.status(404).json({ message: "User not found" }); 
+    } 
+
+     if (user.isVerified) {
+      logger.warn(`Account already verified for email: ${email}`);
       return res.status(400).json({ message: "Account is already verified" });
+    }
 
     if (!user.verificationCode || user.verificationCodeExpires < new Date()) {
+      logger.warn(`Verification code expired for email: ${email}`);
       return res
         .status(400)
         .json({ message: "Verification code expired. Request a new one." });
     }
 
     if (user.verificationCode !== verificationCode) {
+      logger.warn(`Invalid verification code for email: ${email}`);
       return res.status(400).json({ message: "Invalid verification code" });
     }
 
@@ -71,7 +87,7 @@ exports.verifyAccount = async (req, res) => {
     user.verificationCode = null;
     user.verificationCodeExpires = null;
     await user.save();
-
+    logger.info(`Account verified for email: ${email}`);
     const token = jwt.sign(
       { userId: user._id, email: user.email },
       process.env.JWT_SECRET,
@@ -84,6 +100,7 @@ exports.verifyAccount = async (req, res) => {
       .status(200)
       .json({ message: "Account verified successfully", token });
   } catch (error) {
+    logger.error("Error in verifyAccount: " + error.message);
     return res
       .status(500)
       .json({ message: "Server error", error: error.message });
