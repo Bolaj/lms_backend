@@ -23,6 +23,7 @@ const AssignmentSchema = new mongoose.Schema(
         submittedAt: { type: Date, default: Date.now },
       },
     ],
+    isExpired: { type: Boolean, default: false }, 
   },
   { timestamps: true }
 );
