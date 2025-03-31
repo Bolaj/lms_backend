@@ -91,3 +91,14 @@
 [2025-03-31 14:34:27] INFO: User SignUp called
 [2025-03-31 14:34:34] WARN: User already exists with email: mattybolaji@gmail.com
 [2025-03-31 14:35:29] INFO: Cron jobs scheduled successfully.
+[2025-03-31 15:02:02] INFO: Cron jobs scheduled successfully.
+[2025-03-31 15:03:06] INFO: User SignUp called
+[2025-03-31 15:03:06] INFO: New user created with email: mattybolaji@gmail.com
+[2025-03-31 15:03:08] INFO: Verification email sent to: mattybolaji@gmail.com
+[2025-03-31 15:07:30] INFO: Cron jobs scheduled successfully.
+[2025-03-31 15:16:26] INFO: Cron jobs scheduled successfully.
+[2025-03-31 15:16:28] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-03-31 23:11:43] INFO: Cron jobs scheduled successfully.
+[2025-03-31 23:11:44] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-03-31 23:14:36] INFO: User SignUp called
+[2025-03-31 23:14:37] WARN: User already exists with email: mattybolaji@gmail.com
