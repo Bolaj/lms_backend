@@ -189,3 +189,12 @@
 [2025-04-01 13:46:54] INFO: Cron jobs scheduled successfully.
 [2025-04-01 13:46:55] INFO: Cloudinary configuration successful.
 [2025-04-01 13:46:56] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 13:54:45] INFO: Cron jobs scheduled successfully.
+[2025-04-01 13:54:45] INFO: Cloudinary configuration successful.
+[2025-04-01 13:54:47] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 14:01:06] INFO: createCourse Endpoint called
+[2025-04-01 14:01:06] INFO: File uploaded successfully: https://res.cloudinary.com/dqoggxuwx/image/upload/v1743512465/courses/sguybu9ps7fsvdmo2hqw.pdf
+[2025-04-01 14:01:06] INFO: Course created successfully: CSC 442 by user 67dadee4cf42eae2951f321b
+[2025-04-01 14:04:58] INFO: Cron jobs scheduled successfully.
+[2025-04-01 14:04:59] INFO: Cloudinary configuration successful.
+[2025-04-01 14:05:00] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
