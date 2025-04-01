@@ -340,51 +340,114 @@ paths:
           description: Course not found
         "409":
           description: Already enrolled in course
+  /user/enrolled-courses:
+    get:
+      tags:
+        - User
+      summary: Get Enrolled Courses
+      description: Fetch all courses a student is enrolled in. This endpoint is accessible only to authenticated users with the `student` role.
+      security:
+        - bearerAuth: [] # Require Bearer Token for this endpoint
+      responses:
+        "200":
+          description: Enrolled courses fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Enrolled courses fetched successfully
+                  courses:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Course"
+        "401":
+          description: Unauthorized
+        "404":
+          description: No enrolled courses found
+        "500":
+          description: Server error
 
   /courses:
     post:
       tags:
         - Course
       summary: Create Course Endpoint
-      description: Allows a teacher or admin to create a new course.
+      description: Allows a teacher or admin to create a new course. A file (PDF or MP4) can optionally be uploaded.
       security:
-        - bearerAuth: [] 
+        - bearerAuth: [] # Require Bearer Token for this endpoint
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
-              $ref: "#/components/schemas/Course"
+              type: object
+              properties:
+                courseCode:
+                  type: string
+                  example: CICD 208
+                  description: The unique code for the course.
+                title:
+                  type: string
+                  example: Learn Continuous Integration and Continuous Development part 2
+                  description: The title of the course.
+                description:
+                  type: string
+                  example: This is a beginner video on CICD part 2.
+                  description: A brief description of the course.
+                teacherId:
+                  type: string
+                  example: 605c72f65b3c4e1a88d9f123
+                  description: The ID of the teacher assigned to the course (required for admins).
+                file:
+                  type: string
+                  format: binary
+                  description: An optional file (PDF or MP4) to upload for the course.
       responses:
         "201":
           description: Course Created Successfully
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Course"
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Course created successfully
+                  course:
+                    $ref: "#/components/schemas/Course"
         "400":
           description: Invalid input
         "401":
           description: Unauthorized
         "409":
           description: Course already exists
+
   /courses/:
     get:
       tags:
         - Course
       summary: Get All Courses
-      description: Fetch all courses. Only teachers or admins can access this endpoint.
+      description: Fetch all courses available in the system. This endpoint is accessible to authorized users.
       security:
-        - bearerAuth: [] 
+        - bearerAuth: [] # Require Bearer Token for this endpoint
       responses:
         "200":
           description: Courses fetched successfully
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Course"
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Courses fetched successfully
+                  courses:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Course"
         "401":
           description: Unauthorized
         "500":

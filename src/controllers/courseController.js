@@ -1,48 +1,74 @@
 const Course = require("../models/Course");
+const upload = require("../utils/fileUpload");
+const logger = require("../utils/logger");
 
-exports.createCourse = async (req, res) => {
-  try {
-    if (req.user.role !== "teacher" && req.user.role !== "admin") {
-      return res.status(403).json({
-        message: "Access denied! Only Teachers and Admins are authorized to create Courses",
+exports.createCourse = [
+  upload.single("file"), 
+  async (req, res) => {
+    
+    try {
+      logger.info("createCourse Endpoint called");
+      if (req.user.role !== "teacher" && req.user.role !== "admin") {
+        logger.warn(`Unauthorized access attempt by user ${req.user.id} with role ${req.user.role}`);
+        return res.status(403).json({
+          message: "Access denied! Only Teachers and Admins are authorized to create Courses",
+        });
+      }
+
+      const { courseCode, title, description, teacherId } = req.body;
+
+      if (req.user.role === "admin" && !teacherId) {
+        logger.warn(`Admin user ${req.user.id} attempted to create a course without providing a teacherId`);
+        return res.status(400).json({
+          message: "Teacher ID is required to assign a teacher to the course",
+        });
+      }
+      const existingCourse = await Course.findOne({ courseCode });
+      if (existingCourse) {
+        logger.warn(`Course creation failed: Course with code '${courseCode}' already exists`);
+        return res.status(400).json({
+          message: `A course with the code '${courseCode}' already exists.`,
+        });
+      }
+
+      
+      let fileUrl = null;
+      if (req.file) {
+        fileUrl = req.file.path; 
+        logger.info(`File uploaded successfully: ${fileUrl}`);
+      } else {
+        logger.info("No file uploaded for the course");
+      }
+
+      const course = new Course({
+        courseCode,
+        title,
+        description,
+        teacher: req.user.role === "teacher" ? req.user.id : teacherId,
+        fileUrl, 
       });
-    }
 
-    const { courseCode, title, description, teacherId } = req.body;
+      await course.save();
+      logger.info(`Course created successfully: ${courseCode} by user ${req.user.id}`);
 
-    if (req.user.role === "admin" && !teacherId) {
-      return res.status(400).json({
-        message: "Teacher ID is required to assign a teacher to the course",
+      res.status(201).json({
+        message: "Course created successfully",
+        course,
       });
+    } catch (err) {
+      if (err instanceof multer.MulterError) {
+        logger.error(`Multer error during file upload: ${err.message}`);
+        return res.status(400).json({ message: err.message });
+      } else if (err.message === "Only PDF and MP4 files are allowed") {
+        logger.error(`Invalid file type uploaded: ${err.message}`);
+        return res.status(400).json({ message: err.message });
+      } else {
+        logger.error(`Error creating course: ${err.message}`);
+        res.status(500).json({ message: "Server error", error: err.message });
+      }
     }
-
-    const existingCourse = await Course.findOne({ courseCode });
-    if (existingCourse) {
-      return res.status(400).json({
-        message: `A course with the code '${courseCode}' already exists.`,
-      });
-    }
-
-    const course = new Course({
-      courseCode,
-      title,
-      description,
-      teacher: req.user.role === "teacher" ? req.user.id : teacherId,
-    });
-
-    await course.save();
-    console.log(
-      `Course Created: Title - ${title}, Code - ${courseCode}, Created By - ${req.user.role} (${req.user.id})`
-    );
-    res.status(201).json({
-      message: "Course created successfully",
-      course,
-    });
-  } catch (err) {
-    console.error(`Error creating course: ${err.message}`);
-    res.status(500).json({ message: "Server error", error: err.message });
-  }
-};
+  },
+];
 
 exports.getCourses = async (req, res) => {
   try {
