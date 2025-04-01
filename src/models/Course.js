@@ -14,6 +14,7 @@ const CourseSchema = new mongoose.Schema(
         ref: "User", 
         required: true 
     },
+    fileUrl: { type: String },
     deleted: { type: Boolean, default: false }, 
 
     students: [{ 
