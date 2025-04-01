@@ -51,3 +51,5 @@
 [2025-04-01 15:03:40] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
 [2025-04-01 15:05:13] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
 [2025-04-01 15:05:17] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 15:33:47] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 15:42:58] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"

@@ -13,20 +13,23 @@ const { validationResult } = require("express-validator");
 
 exports.getEnrolledCourses = async (req, res) => {
   try {
+    logger.info("getEnrolledCourses Endpoint called");
     const userId = req.user.id; 
-
+    logger.info(`Fetching enrolled courses for user ID: ${userId}`);
     const courses = await Course.find({ students: userId });
 
     if (!courses || courses.length === 0) {
+      logger.warn(`No enrolled courses found for user ID: ${userId}`);
       return res.status(404).json({ message: "No enrolled courses found" });
     }
 
+    logger.info(`Enrolled courses fetched successfully for user ID: ${userId}`);
     return res.status(200).json({
       message: "Enrolled courses fetched successfully",
       courses,
     });
   } catch (error) {
-    console.error("Error fetching enrolled courses:", error.message);
+    logger.error(`Error fetching enrolled courses for user ID: ${req.user.id} - ${error.message}`);
     return res.status(500).json({ message: "Server error", error: error.message });
   }
 };
