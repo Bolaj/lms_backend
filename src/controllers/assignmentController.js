@@ -60,10 +60,12 @@ exports.createAssignment = async (req, res) => {
 
 exports.getAssignments = async (req, res) => {
   try {
+    logger.info("getAssignments Endpoint called");
     const assignments = await Assignment.find().populate("course", "title");
+    logger.info("Assignments fetched successfully");
     res.json(assignments);
   } catch (err) {
-    console.error(err);
+    logger.error("Error fetching assignments: " + err.message);
     res.status(500).send("Server error");
   }
 };
@@ -83,7 +85,6 @@ exports.submitAssignment = async (req, res) => {
       return res.status(404).json({ msg: "Assignment not found" });
     }
 
-    // Check if the assignment's due date has passed
     if (new Date() > new Date(assignment.dueDate)) {
       logger.warn(`Due date passed for assignment ID: ${req.params.assignmentId}`);
       return res.status(403).json({ msg: "The due date for this assignment has passed. Submissions are no longer allowed." });
@@ -147,5 +148,42 @@ exports.sendAssignmentReminders = async ({ excludeExpired = false } = {}) => {
     logger.info("Reminders sent successfully.");
   } catch (err) {
     logger.error("Error sending reminders: " + err.message);
+  }
+};
+exports.editAssignmentDueDate = async (req, res) => {
+  logger.info("editAssignmentDueDate Endpoint called");
+
+  if (req.user.role !== "teacher") {
+    logger.warn("Unauthorized access attempt to editAssignmentDueDate");
+    return res.status(403).json({ msg: "Only teachers can edit assignment due dates" });
+  }
+
+  const { assignmentId } = req.params;
+  const { newDueDate } = req.body;
+
+  try {
+    const assignment = await Assignment.findById(assignmentId);
+
+    if (!assignment) {
+      logger.warn(`Assignment not found with ID: ${assignmentId}`);
+      return res.status(404).json({ msg: "Assignment not found" });
+    }
+
+    if (new Date(newDueDate) <= new Date()) {
+      logger.warn(`Invalid due date provided for assignment ID: ${assignmentId}`);
+      return res.status(400).json({ msg: "The new due date must be in the future" });
+    }
+
+    assignment.dueDate = newDueDate;
+    await assignment.save();
+
+    logger.info(`Due date updated successfully for assignment ID: ${assignmentId}`);
+    res.status(200).json({
+      msg: "Assignment due date updated successfully",
+      assignment,
+    });
+  } catch (err) {
+    logger.error(`Error updating assignment due date: ${err.message}`);
+    res.status(500).send("Server error");
   }
 };
