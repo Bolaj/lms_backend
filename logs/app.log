@@ -143,3 +143,49 @@
 [2025-04-01 01:02:12] ERROR: Error sending email: Missing credentials for "PLAIN"
 [2025-04-01 01:02:12] INFO: Reminders sent successfully.
 [2025-04-01 01:02:12] INFO: Assignment reminders sent successfully.
+[2025-04-01 12:22:06] INFO: Cron jobs scheduled successfully.
+[2025-04-01 12:22:07] INFO: Cloudinary configuration successful.
+[2025-04-01 12:22:08] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 12:23:47] INFO: createCourse Endpoint called
+[2025-04-01 12:23:47] WARN: Course creation failed: Course with code 'UIUX' already exists
+[2025-04-01 12:26:53] INFO: createCourse Endpoint called
+[2025-04-01 12:26:53] INFO: No file uploaded for the course
+[2025-04-01 12:26:54] INFO: Course created successfully: CICD 101 by user 67dadee4cf42eae2951f321b
+[2025-04-01 12:28:21] INFO: createCourse Endpoint called
+[2025-04-01 12:28:21] INFO: No file uploaded for the course
+[2025-04-01 12:28:21] INFO: Course created successfully: CICD 208 by user 67dadee4cf42eae2951f321b
+[2025-04-01 12:39:07] INFO: createCourse Endpoint called
+[2025-04-01 12:39:07] INFO: No file uploaded for the course
+[2025-04-01 12:39:07] INFO: Course created successfully: CICD 209 by user 67dadee4cf42eae2951f321b
+[2025-04-01 13:02:00] INFO: Running reminder job...
+[2025-04-01 13:02:00] INFO: sendAssignmentReminders function called
+[2025-04-01 13:02:02] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:03] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:04] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:05] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:05] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:06] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:07] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:08] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:09] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:10] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:10] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:11] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:12] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:13] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-01 13:02:13] INFO: Reminders sent successfully.
+[2025-04-01 13:02:13] INFO: Assignment reminders sent successfully.
+[2025-04-01 13:08:36] INFO: Cron jobs scheduled successfully.
+[2025-04-01 13:08:37] INFO: Cloudinary configuration successful.
+[2025-04-01 13:08:38] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 13:11:21] INFO: createCourse Endpoint called
+[2025-04-01 13:11:22] INFO: File uploaded successfully: https://res.cloudinary.com/dqoggxuwx/image/upload/v1743509481/courses/gutqkfdvfy7opta2xpzd.pdf
+[2025-04-01 13:11:22] INFO: Course created successfully: CICD 301 by user 67dadee4cf42eae2951f321b
+[2025-04-01 13:18:57] INFO: Cron jobs scheduled successfully.
+[2025-04-01 13:18:58] INFO: Cloudinary configuration successful.
+[2025-04-01 13:19:00] INFO: Cron jobs scheduled successfully.
+[2025-04-01 13:19:00] INFO: Cloudinary configuration successful.
+[2025-04-01 13:19:02] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 13:46:54] INFO: Cron jobs scheduled successfully.
+[2025-04-01 13:46:55] INFO: Cloudinary configuration successful.
+[2025-04-01 13:46:56] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"

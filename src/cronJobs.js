@@ -3,7 +3,7 @@ const { sendAssignmentReminders } = require("./controllers/assignmentController"
 const logger = require("../src/utils/logger");
 
 const scheduleCronJobs = () => {
-    cron.schedule("2 * * * *", async () => {
+    cron.schedule("0 0 * * *", async () => {
       logger.info("Running reminder job...");
       try {
         await sendAssignmentReminders({ excludeExpired: true });
