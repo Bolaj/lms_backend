@@ -243,3 +243,8 @@
 [2025-04-01 18:24:14] WARN: Unauthorized access attempt to submitAssignment
 [2025-04-01 18:24:41] INFO: submitAssignment Endpoint called
 [2025-04-01 18:24:41] INFO: Assignment submitted successfully by student ID: 67e9e37311381da3c0dc0f9f
+[2025-04-01 18:41:39] INFO: Cron jobs scheduled successfully.
+[2025-04-01 18:41:40] INFO: Cloudinary configuration successful.
+[2025-04-01 18:41:41] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 18:41:44] INFO: getAssignments Endpoint called
+[2025-04-01 18:41:45] INFO: Assignments fetched successfully
