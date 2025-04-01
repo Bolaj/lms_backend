@@ -216,3 +216,30 @@
 [2025-04-01 15:42:56] INFO: Cron jobs scheduled successfully.
 [2025-04-01 15:42:57] INFO: Cloudinary configuration successful.
 [2025-04-01 15:42:58] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 17:07:29] INFO: Cron jobs scheduled successfully.
+[2025-04-01 17:07:30] INFO: Cloudinary configuration successful.
+[2025-04-01 17:07:32] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 17:08:29] INFO: getAssignments Endpoint called
+[2025-04-01 17:08:29] INFO: Assignments fetched successfully
+[2025-04-01 17:10:06] INFO: Cron jobs scheduled successfully.
+[2025-04-01 17:10:07] INFO: Cloudinary configuration successful.
+[2025-04-01 17:10:08] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 17:24:13] INFO: Cron jobs scheduled successfully.
+[2025-04-01 17:24:14] INFO: Cloudinary configuration successful.
+[2025-04-01 17:24:14] ERROR: Error verifying SMTP connection: queryAaaa ETIMEOUT smtp.gmail.com
+[2025-04-01 17:36:05] INFO: Cron jobs scheduled successfully.
+[2025-04-01 17:36:06] INFO: Cloudinary configuration successful.
+[2025-04-01 17:36:07] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 17:55:00] INFO: getCourses Endpoint called
+[2025-04-01 17:56:33] INFO: editAssignmentDueDate Endpoint called
+[2025-04-01 17:56:33] WARN: Unauthorized access attempt to editAssignmentDueDate
+[2025-04-01 18:17:49] INFO: editAssignmentDueDate Endpoint called
+[2025-04-01 18:17:49] INFO: Due date updated successfully for assignment ID: 67e3128950c24ea3f33bb81c
+[2025-04-01 18:18:50] INFO: submitAssignment Endpoint called
+[2025-04-01 18:18:50] WARN: Unauthorized access attempt to submitAssignment
+[2025-04-01 18:24:09] INFO: submitAssignment Endpoint called
+[2025-04-01 18:24:09] WARN: Unauthorized access attempt to submitAssignment
+[2025-04-01 18:24:14] INFO: submitAssignment Endpoint called
+[2025-04-01 18:24:14] WARN: Unauthorized access attempt to submitAssignment
+[2025-04-01 18:24:41] INFO: submitAssignment Endpoint called
+[2025-04-01 18:24:41] INFO: Assignment submitted successfully by student ID: 67e9e37311381da3c0dc0f9f
