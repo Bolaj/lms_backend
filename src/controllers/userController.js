@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Course = require("../models/Course");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
@@ -8,6 +9,27 @@ const generateVerificationCode = () =>
   crypto.randomInt(100000, 999999).toString();
 const { validationResult } = require("express-validator");
 
+
+
+exports.getEnrolledCourses = async (req, res) => {
+  try {
+    const userId = req.user.id; 
+
+    const courses = await Course.find({ students: userId });
+
+    if (!courses || courses.length === 0) {
+      return res.status(404).json({ message: "No enrolled courses found" });
+    }
+
+    return res.status(200).json({
+      message: "Enrolled courses fetched successfully",
+      courses,
+    });
+  } catch (error) {
+    console.error("Error fetching enrolled courses:", error.message);
+    return res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
 exports.signUp = async (req, res) => {
   try {
     logger.info("User SignUp called");

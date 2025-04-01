@@ -340,6 +340,35 @@ paths:
           description: Course not found
         "409":
           description: Already enrolled in course
+  /user/enrolled-courses:
+    get:
+      tags:
+        - User
+      summary: Get Enrolled Courses
+      description: Fetch all courses a student is enrolled in. This endpoint is accessible only to authenticated users with the `student` role.
+      security:
+        - bearerAuth: [] # Require Bearer Token for this endpoint
+      responses:
+        "200":
+          description: Enrolled courses fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Enrolled courses fetched successfully
+                  courses:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Course"
+        "401":
+          description: Unauthorized
+        "404":
+          description: No enrolled courses found
+        "500":
+          description: Server error
 
   /courses:
     post:
