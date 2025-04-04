@@ -1,8 +1,11 @@
+Based on the existing README file of the `lms_backend` project, here is a structured README for the project:
+
+---
+
 # 🏢 School Learning Management System (LMS)
 
 ## 📌 Project Overview
-The **School Learning Management System (LMS)** is a platform designed to help schools efficiently manage students, teachers, courses, assignments, and communication in an online environment. 
-The system provides **role-based access control (RBAC)** for administrators, teachers, and students.
+The **School Learning Management System (LMS)** is a platform designed to help schools efficiently manage students, teachers, courses, assignments, and communication in an online environment. The system provides **role-based access control (RBAC)** for administrators, teachers, and students.
 
 ## 🚀 Features
 - **User Management**: Register, login, and manage student and teacher accounts.
@@ -22,11 +25,10 @@ The system provides **role-based access control (RBAC)** for administrators, tea
 ## 📁 Project Structure
 ```
 lms-backend/
-│── node_modules/          # Dependencies
-│── src/
+├── node_modules/          # Dependencies
+├── src/
 │   ├── config/            # Configuration files (DB, JWT, CORS, etc.)
 │   │   ├── db.js
-│  
 │   │
 │   ├── controllers/       # Controllers (handle business logic)
 │   │   ├── auth.controller.js
@@ -52,28 +54,24 @@ lms-backend/
 │   │   ├── teacher.routes.js
 │   │   ├── course.routes.js
 │   │   ├── assignment.routes.js
-│   
-│   
-│   │
+│
 │   ├── utils/             # Helper functions (logger, error handling)
 │   │   ├── logger.js
 │   │   ├── emailService.js
-│   │
-│   ├── app.js             # Main Express app (loads routes & middleware)
-│   
 │
-│── ├── index.js           # Server entry point
-│── .env                   # Environment variables
-│── package.json           # Dependencies & scripts
-│── README.md              # Documentation
-
+│   ├── app.js             # Main Express app (loads routes & middleware)
+│
+├── index.js               # Server entry point
+├── .env                   # Environment variables
+├── package.json           # Dependencies & scripts
+├── README.md              # Documentation
 ```
 
 ## 🚀 Installation & Setup
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/lms-project.git
-cd lms-project
+git clone https://github.com/Bolaj/lms_backend.git
+cd lms_backend
 ```
 
 ### 2️⃣ Install Dependencies
@@ -97,11 +95,11 @@ npm run dev
 ## 📚 API Endpoints
 | Endpoint             | Method | Description                     |
 |----------------------|--------|---------------------------------|
-| `/api/lms/login`   | POST   | User login                      |
-| `/api/lms/signup`| POST   | Register a new user             |
-| `/api/lms/courses`      | GET    | Retrieve all courses            |
-| `/api/lms/students`     | GET    | Get student details             |
-| `/api/lms/assignments`     | POST    | Submit Assignment            |
+| `/api/lms/user/signIn`     | POST   | User login                      |
+| `/api/lms/signup`    | POST   | Register a new user             |
+| `/api/lms/courses`   | GET    | Retrieve all courses            |
+| `/api/lms/students`  | GET    | Get student details             |
+| `/api/lms/assignments`| POST  | Submit Assignment               |
 
 ## ✅ Contribution Guidelines
 1. Fork the repository.
@@ -112,3 +110,7 @@ npm run dev
 
 ## 📄 License
 This project is licensed under the **MIT License**.
+
+---
+
+Feel free to modify or enhance this README as needed for your project.
