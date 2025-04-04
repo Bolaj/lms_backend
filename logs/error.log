@@ -58,3 +58,4 @@
 [2025-04-01 17:24:14] ERROR: Error verifying SMTP connection: queryAaaa ETIMEOUT smtp.gmail.com
 [2025-04-01 17:36:07] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
 [2025-04-01 18:41:41] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-02 20:07:23] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
