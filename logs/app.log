@@ -251,3 +251,19 @@
 [2025-04-02 20:07:21] INFO: Cron jobs scheduled successfully.
 [2025-04-02 20:07:22] INFO: Cloudinary configuration successful.
 [2025-04-02 20:07:23] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-07 13:59:26] INFO: Cloudinary configuration successful.
+[2025-04-07 13:59:27] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-07 23:07:33] INFO: Cloudinary configuration successful.
+[2025-04-07 23:07:34] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-07 23:10:19] INFO: Cloudinary configuration successful.
+[2025-04-07 23:10:20] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-07 23:14:50] INFO: Cloudinary configuration successful.
+[2025-04-07 23:14:52] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-07 23:43:27] INFO: Cloudinary configuration successful.
+[2025-04-07 23:43:28] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-08 21:04:59] INFO: Cloudinary configuration successful.
+[2025-04-08 21:06:03] ERROR: Error verifying SMTP connection: queryA ETIMEOUT smtp.gmail.com
+[2025-04-08 21:07:18] INFO: Cloudinary configuration successful.
+[2025-04-08 21:07:20] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-08 21:25:53] INFO: Cloudinary configuration successful.
+[2025-04-08 21:25:57] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
