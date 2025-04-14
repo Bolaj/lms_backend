@@ -217,6 +217,35 @@ paths:
           description: Invalid input
         "401":
           description: Unauthorized
+  /user/signout:
+    post:
+      summary: Sign out user
+      description: Signs out the currently authenticated user. In JWT-based auth, this typically means the client should delete the token.
+      tags:
+        - User
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successfully signed out
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User signed out successfully
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Something went wrong during signout
   /user/resend-verification-code:
     post:
       tags:

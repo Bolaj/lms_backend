@@ -2,6 +2,8 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express')
 const YAML = require('yamljs')
 const swaggerDocs = YAML.load('./src/swagger/swagger.yml')
+const cookieParser = require('cookie-parser');
+
 const cors = require('cors')
 
 const scheduleCronJobs = require('./src/cronJobs')
@@ -11,6 +13,8 @@ const db = require('./src/config/db');
 db()
 
 app.use(express.json())
+app.use(cookieParser());
+
 
 const allowedOrigins = [
   "https://lms-backend-vb2k.onrender.com", 
