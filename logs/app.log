@@ -243,3 +243,142 @@
 [2025-04-01 18:24:14] WARN: Unauthorized access attempt to submitAssignment
 [2025-04-01 18:24:41] INFO: submitAssignment Endpoint called
 [2025-04-01 18:24:41] INFO: Assignment submitted successfully by student ID: 67e9e37311381da3c0dc0f9f
+[2025-04-01 18:41:39] INFO: Cron jobs scheduled successfully.
+[2025-04-01 18:41:40] INFO: Cloudinary configuration successful.
+[2025-04-01 18:41:41] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-01 18:41:44] INFO: getAssignments Endpoint called
+[2025-04-01 18:41:45] INFO: Assignments fetched successfully
+[2025-04-02 20:07:21] INFO: Cron jobs scheduled successfully.
+[2025-04-02 20:07:22] INFO: Cloudinary configuration successful.
+[2025-04-02 20:07:23] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-11 06:34:45] INFO: Cron jobs scheduled successfully.
+[2025-04-11 06:34:45] INFO: Cloudinary configuration successful.
+[2025-04-11 06:34:47] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-11 06:45:48] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-11 06:59:11] INFO: Cron jobs scheduled successfully.
+[2025-04-11 06:59:11] INFO: Cloudinary configuration successful.
+[2025-04-11 06:59:12] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-11 07:01:48] INFO: Cron jobs scheduled successfully.
+[2025-04-11 07:01:49] INFO: Cloudinary configuration successful.
+[2025-04-11 07:01:49] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-11 07:02:48] INFO: Cron jobs scheduled successfully.
+[2025-04-11 07:02:49] INFO: Cloudinary configuration successful.
+[2025-04-11 07:02:50] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-11 07:06:28] INFO: Cron jobs scheduled successfully.
+[2025-04-11 07:06:29] INFO: Cloudinary configuration successful.
+[2025-04-11 07:06:30] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-11 12:43:59] INFO: Cron jobs scheduled successfully.
+[2025-04-11 12:44:00] INFO: Cloudinary configuration successful.
+[2025-04-11 12:44:39] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-11 12:50:54] INFO: Cron jobs scheduled successfully.
+[2025-04-11 12:50:55] INFO: Cloudinary configuration successful.
+[2025-04-11 12:51:08] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-11 13:58:28] INFO: Cron jobs scheduled successfully.
+[2025-04-11 13:58:29] INFO: Cloudinary configuration successful.
+[2025-04-11 14:00:33] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:00:34] INFO: Cloudinary configuration successful.
+[2025-04-11 14:02:11] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:02:11] INFO: Cloudinary configuration successful.
+[2025-04-11 14:05:30] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:05:30] INFO: Cloudinary configuration successful.
+[2025-04-11 14:05:43] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:05:44] INFO: Cloudinary configuration successful.
+[2025-04-11 14:05:53] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:05:54] INFO: Cloudinary configuration successful.
+[2025-04-11 14:06:01] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:06:03] INFO: Cloudinary configuration successful.
+[2025-04-11 14:06:21] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:06:21] INFO: Cloudinary configuration successful.
+[2025-04-11 14:07:45] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:07:45] INFO: Cloudinary configuration successful.
+[2025-04-11 14:08:49] INFO: Cron jobs scheduled successfully.
+[2025-04-11 14:08:49] INFO: Cloudinary configuration successful.
+[2025-04-12 23:15:55] INFO: Cron jobs scheduled successfully.
+[2025-04-12 23:15:56] INFO: Cloudinary configuration successful.
+[2025-04-13 22:52:09] INFO: Cron jobs scheduled successfully.
+[2025-04-13 22:52:10] INFO: Cloudinary configuration successful.
+[2025-04-13 22:52:53] ERROR: Error sending email: Missing credentials for "PLAIN"
+[2025-04-13 22:53:32] INFO: Cron jobs scheduled successfully.
+[2025-04-13 22:53:33] INFO: Cloudinary configuration successful.
+[2025-04-13 22:53:34] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-13 23:48:50] INFO: Cron jobs scheduled successfully.
+[2025-04-13 23:48:50] INFO: Cloudinary configuration successful.
+[2025-04-13 23:48:52] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-04-13 23:50:09] INFO: Cron jobs scheduled successfully.
+[2025-04-13 23:50:10] INFO: Cloudinary configuration successful.
+[2025-04-13 23:50:16] INFO: SMTP connection verified successfully.
+[2025-04-13 23:51:15] INFO: Cron jobs scheduled successfully.
+[2025-04-13 23:51:15] INFO: Cloudinary configuration successful.
+[2025-04-13 23:51:22] INFO: SMTP connection verified successfully.
+[2025-04-13 23:53:31] INFO: Email sent to idowu.durotimi@gmail.com
+[2025-04-14 00:00:00] INFO: Running reminder job...
+[2025-04-14 00:00:00] INFO: sendAssignmentReminders function called
+[2025-04-14 00:00:03] INFO: Email sent to aduragbemioa@gmail.com
+[2025-04-14 00:00:05] INFO: Email sent to timilehin.bolaji33@gmail.com
+[2025-04-14 00:00:07] INFO: Email sent to mattybolaji@gmail.com
+[2025-04-14 00:00:10] INFO: Email sent to aduragbemioa@gmail.com
+[2025-04-14 00:00:11] INFO: Email sent to timilehin.bolaji33@gmail.com
+[2025-04-14 00:00:13] INFO: Email sent to mattybolaji@gmail.com
+[2025-04-14 00:00:16] INFO: Email sent to timilehin.bolaji33@gmail.com
+[2025-04-14 00:00:18] INFO: Email sent to mattybolaji@gmail.com
+[2025-04-14 00:00:20] INFO: Email sent to aduragbemioa@gmail.com
+[2025-04-14 00:00:22] INFO: Email sent to timilehin.bolaji33@gmail.com
+[2025-04-14 00:00:23] INFO: Email sent to mattybolaji@gmail.com
+[2025-04-14 00:00:26] INFO: Email sent to aduragbemioa@gmail.com
+[2025-04-14 00:00:28] INFO: Email sent to timilehin.bolaji33@gmail.com
+[2025-04-14 00:00:30] INFO: Email sent to mattybolaji@gmail.com
+[2025-04-14 00:00:30] INFO: Reminders sent successfully.
+[2025-04-14 00:00:30] INFO: Assignment reminders sent successfully.
+[2025-04-14 00:16:33] INFO: Cron jobs scheduled successfully.
+[2025-04-14 00:16:33] INFO: Cloudinary configuration successful.
+[2025-04-14 00:16:34] INFO: SMTP connection verified successfully.
+[2025-04-14 00:16:44] INFO: signOut endpoint called
+[2025-04-14 00:17:28] INFO: signOut endpoint called
+[2025-04-14 00:17:35] INFO: signOut endpoint called
+[2025-04-14 15:27:45] INFO: Cron jobs scheduled successfully.
+[2025-04-14 15:27:45] INFO: Cloudinary configuration successful.
+[2025-04-14 15:27:46] ERROR: Error verifying SMTP connection: getaddrinfo ENOTFOUND smtp.gmail.com
+[2025-04-14 15:28:52] INFO: signOut endpoint called
+[2025-04-14 20:43:38] INFO: Cron jobs scheduled successfully.
+[2025-04-14 20:43:39] INFO: Cloudinary configuration successful.
+[2025-04-14 20:43:42] INFO: SMTP connection verified successfully.
+[2025-04-14 20:44:30] INFO: signOut endpoint called
+[2025-04-14 20:44:35] INFO: signOut endpoint called
+[2025-04-14 20:47:00] INFO: signOut endpoint called
+[2025-04-14 20:47:23] INFO: signOut endpoint called
+[2025-04-14 20:48:14] INFO: Cron jobs scheduled successfully.
+[2025-04-14 20:48:15] INFO: Cloudinary configuration successful.
+[2025-04-14 20:48:16] INFO: SMTP connection verified successfully.
+[2025-04-14 20:51:20] INFO: Cron jobs scheduled successfully.
+[2025-04-14 20:51:21] INFO: Cloudinary configuration successful.
+[2025-04-14 20:51:23] INFO: SMTP connection verified successfully.
+[2025-04-14 20:52:57] INFO: Cron jobs scheduled successfully.
+[2025-04-14 20:52:58] INFO: Cloudinary configuration successful.
+[2025-04-14 20:52:59] INFO: SMTP connection verified successfully.
+[2025-04-14 20:53:30] INFO: Cron jobs scheduled successfully.
+[2025-04-14 20:53:31] INFO: Cloudinary configuration successful.
+[2025-04-14 20:53:33] INFO: SMTP connection verified successfully.
+[2025-04-14 20:53:52] INFO: Cron jobs scheduled successfully.
+[2025-04-14 20:53:53] INFO: Cloudinary configuration successful.
+[2025-04-14 20:53:54] INFO: SMTP connection verified successfully.
+[2025-04-14 20:54:00] INFO: Cookies before clearing:
+[2025-04-14 20:54:00] INFO: signOut endpoint called
+[2025-04-14 20:54:00] INFO: Cleared the token cookie
+[2025-04-14 21:08:12] INFO: Cron jobs scheduled successfully.
+[2025-04-14 21:08:13] INFO: Cloudinary configuration successful.
+[2025-04-14 21:08:25] INFO: SMTP connection verified successfully.
+[2025-04-14 21:12:03] INFO: Cron jobs scheduled successfully.
+[2025-04-14 21:12:04] INFO: Cloudinary configuration successful.
+[2025-04-14 21:12:13] INFO: SMTP connection verified successfully.
+[2025-04-14 21:13:16] INFO: Cron jobs scheduled successfully.
+[2025-04-14 21:13:16] INFO: Cloudinary configuration successful.
+[2025-04-14 21:13:26] INFO: SMTP connection verified successfully.
+[2025-04-14 21:16:34] INFO: Cron jobs scheduled successfully.
+[2025-04-14 21:16:35] INFO: Cloudinary configuration successful.
+[2025-04-14 21:16:37] INFO: SMTP connection verified successfully.
+[2025-04-14 21:16:47] INFO: Cron jobs scheduled successfully.
+[2025-04-14 21:16:48] INFO: Cloudinary configuration successful.
+[2025-04-14 21:16:49] INFO: SMTP connection verified successfully.
+[2025-04-14 21:19:14] INFO: Cron jobs scheduled successfully.
+[2025-04-14 21:19:14] INFO: Cloudinary configuration successful.
+[2025-04-14 21:19:16] INFO: SMTP connection verified successfully.
