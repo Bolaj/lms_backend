@@ -382,3 +382,178 @@
 [2025-04-14 21:19:14] INFO: Cron jobs scheduled successfully.
 [2025-04-14 21:19:14] INFO: Cloudinary configuration successful.
 [2025-04-14 21:19:16] INFO: SMTP connection verified successfully.
+[2025-07-30 21:37:40] INFO: Cron jobs scheduled successfully.
+[2025-07-30 21:37:40] INFO: Cloudinary configuration successful.
+[2025-07-30 21:37:42] ERROR: Error verifying SMTP connection: Missing credentials for "PLAIN"
+[2025-07-30 21:41:42] INFO: Cron jobs scheduled successfully.
+[2025-07-30 21:41:42] INFO: Cloudinary configuration successful.
+[2025-07-30 21:41:49] INFO: SMTP connection verified successfully.
+[2025-07-30 21:46:09] INFO: Cron jobs scheduled successfully.
+[2025-07-30 21:46:09] INFO: Cloudinary configuration successful.
+[2025-07-30 21:46:17] INFO: SMTP connection verified successfully.
+[2025-07-30 21:49:36] INFO: Cron jobs scheduled successfully.
+[2025-07-30 21:49:36] INFO: Cloudinary configuration successful.
+[2025-07-30 21:49:42] ERROR: Error verifying SMTP connection: connect EHOSTUNREACH 2a00:1450:400c:c1d::6d:465 - Local (:::52834)
+[2025-07-30 21:53:57] INFO: Cron jobs scheduled successfully.
+[2025-07-30 21:53:57] INFO: Cloudinary configuration successful.
+[2025-07-30 21:54:04] INFO: SMTP connection verified successfully.
+[2025-07-30 21:56:18] INFO: Cron jobs scheduled successfully.
+[2025-07-30 21:56:18] INFO: Cloudinary configuration successful.
+[2025-07-30 21:56:25] INFO: SMTP connection verified successfully.
+[2025-07-30 22:14:04] INFO: Cron jobs scheduled successfully.
+[2025-07-30 22:14:04] INFO: Cloudinary configuration successful.
+[2025-07-30 22:14:09] INFO: SMTP connection verified successfully.
+[2025-07-30 22:17:29] INFO: Cron jobs scheduled successfully.
+[2025-07-30 22:17:29] INFO: Cloudinary configuration successful.
+[2025-07-30 22:17:31] INFO: SMTP connection verified successfully.
+[2025-07-30 22:26:14] INFO: User SignUp called
+[2025-07-30 22:26:24] ERROR: Error in signUp: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-07-30 22:26:32] INFO: User SignUp called
+[2025-07-30 22:26:42] ERROR: Error in signUp: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-07-30 22:27:27] INFO: Cron jobs scheduled successfully.
+[2025-07-30 22:27:27] INFO: Cloudinary configuration successful.
+[2025-07-30 22:27:30] INFO: SMTP connection verified successfully.
+[2025-07-30 22:32:28] INFO: Cron jobs scheduled successfully.
+[2025-07-30 22:32:28] INFO: Cloudinary configuration successful.
+[2025-07-30 22:32:32] INFO: SMTP connection verified successfully.
+[2025-07-30 23:18:42] INFO: Cron jobs scheduled successfully.
+[2025-07-30 23:18:42] INFO: Cloudinary configuration successful.
+[2025-07-30 23:18:45] INFO: SMTP connection verified successfully.
+[2025-07-30 23:20:00] INFO: Cron jobs scheduled successfully.
+[2025-07-30 23:20:00] INFO: Cloudinary configuration successful.
+[2025-07-30 23:20:03] INFO: SMTP connection verified successfully.
+[2025-07-30 23:23:59] INFO: Cron jobs scheduled successfully.
+[2025-07-30 23:23:59] INFO: Cloudinary configuration successful.
+[2025-07-30 23:24:02] INFO: SMTP connection verified successfully.
+[2025-07-30 23:24:16] INFO: Cron jobs scheduled successfully.
+[2025-07-30 23:24:16] INFO: Cloudinary configuration successful.
+[2025-07-30 23:24:28] INFO: SMTP connection verified successfully.
+[2025-07-30 23:24:43] INFO: User SignUp called
+[2025-07-30 23:24:43] WARN: User already exists with email: idowu.durotimi@gmail.com
+[2025-07-30 23:27:36] INFO: Cron jobs scheduled successfully.
+[2025-07-30 23:27:36] INFO: Cloudinary configuration successful.
+[2025-07-30 23:27:39] INFO: SMTP connection verified successfully.
+[2025-07-30 23:28:16] INFO: Cron jobs scheduled successfully.
+[2025-07-30 23:28:16] INFO: Cloudinary configuration successful.
+[2025-07-30 23:28:20] INFO: SMTP connection verified successfully.
+[2025-07-30 23:28:29] INFO: User SignUp called
+[2025-07-30 23:28:29] INFO: New user created with email: idowu.durotimi@gmail.com
+[2025-07-30 23:28:33] INFO: Email sent to idowu.durotimi@gmail.com
+[2025-07-30 23:28:33] INFO: Verification email sent to: idowu.durotimi@gmail.com
+[2025-07-30 23:29:17] INFO: verifyAccount function called
+[2025-07-30 23:29:17] INFO: Account verified for email: idowu.durotimi@gmail.com
+[2025-07-30 23:40:31] INFO: Cron jobs scheduled successfully.
+[2025-07-30 23:40:31] INFO: Cloudinary configuration successful.
+[2025-07-30 23:40:33] INFO: SMTP connection verified successfully.
+[2025-07-31 08:49:25] INFO: Cron jobs scheduled successfully.
+[2025-07-31 08:49:25] INFO: Cloudinary configuration successful.
+[2025-07-31 08:49:31] INFO: SMTP connection verified successfully.
+[2025-07-31 08:50:24] INFO: Cron jobs scheduled successfully.
+[2025-07-31 08:50:24] INFO: Cloudinary configuration successful.
+[2025-07-31 08:50:30] INFO: SMTP connection verified successfully.
+[2025-07-31 08:57:54] INFO: Cron jobs scheduled successfully.
+[2025-07-31 08:57:54] INFO: Cloudinary configuration successful.
+[2025-07-31 08:58:00] INFO: SMTP connection verified successfully.
+[2025-07-31 09:02:07] INFO: Cron jobs scheduled successfully.
+[2025-07-31 09:02:07] INFO: Cloudinary configuration successful.
+[2025-07-31 09:02:10] INFO: SMTP connection verified successfully.
+[2025-07-31 09:03:46] INFO: Cron jobs scheduled successfully.
+[2025-07-31 09:03:47] INFO: Cloudinary configuration successful.
+[2025-07-31 09:03:48] INFO: SMTP connection verified successfully.
+[2025-07-31 21:44:06] INFO: Cron jobs scheduled successfully.
+[2025-07-31 21:44:06] INFO: Cloudinary configuration successful.
+[2025-07-31 21:44:08] INFO: SMTP connection verified successfully.
+[2025-07-31 21:49:25] INFO: Cron jobs scheduled successfully.
+[2025-07-31 21:49:25] INFO: Cloudinary configuration successful.
+[2025-07-31 21:49:26] INFO: SMTP connection verified successfully.
+[2025-07-31 21:53:17] INFO: Cron jobs scheduled successfully.
+[2025-07-31 21:53:17] INFO: Cloudinary configuration successful.
+[2025-07-31 21:53:18] INFO: SMTP connection verified successfully.
+[2025-07-31 21:54:13] INFO: Cron jobs scheduled successfully.
+[2025-07-31 21:54:13] INFO: Cloudinary configuration successful.
+[2025-07-31 21:54:14] INFO: SMTP connection verified successfully.
+[2025-07-31 21:55:40] INFO: Cron jobs scheduled successfully.
+[2025-07-31 21:55:40] INFO: Cloudinary configuration successful.
+[2025-07-31 21:55:41] INFO: SMTP connection verified successfully.
+[2025-07-31 21:59:57] INFO: Cron jobs scheduled successfully.
+[2025-07-31 21:59:57] INFO: Cloudinary configuration successful.
+[2025-07-31 21:59:58] INFO: SMTP connection verified successfully.
+[2025-07-31 22:12:51] INFO: Cron jobs scheduled successfully.
+[2025-07-31 22:12:51] INFO: Cloudinary configuration successful.
+[2025-07-31 22:12:52] INFO: SMTP connection verified successfully.
+[2025-07-31 22:27:31] INFO: Cron jobs scheduled successfully.
+[2025-07-31 22:27:32] INFO: Cloudinary configuration successful.
+[2025-07-31 22:27:32] INFO: SMTP connection verified successfully.
+[2025-07-31 22:28:39] INFO: Email sent to mattybolaji@gmail.com
+[2025-07-31 22:38:42] INFO: Email sent to mattybolaji@gmail.com
+[2025-07-31 22:41:55] INFO: Fetching enrolled courses for user ID: 688be0059b9bd2d28ebb09d6
+[2025-07-31 22:41:55] WARN: No enrolled courses found for user ID: 688be0059b9bd2d28ebb09d6
+[2025-07-31 22:51:44] INFO: Cron jobs scheduled successfully.
+[2025-07-31 22:51:44] INFO: Cloudinary configuration successful.
+[2025-07-31 22:51:45] INFO: SMTP connection verified successfully.
+[2025-07-31 22:52:00] INFO: Fetching enrolled courses for user ID: 688be0059b9bd2d28ebb09d6
+[2025-07-31 22:52:01] WARN: No enrolled courses found for user ID: 688be0059b9bd2d28ebb09d6
+[2025-07-31 22:53:30] INFO: createCourse Endpoint called
+[2025-07-31 22:53:31] INFO: No file uploaded for the course
+[2025-07-31 22:53:31] INFO: Course created successfully: CSC 400 by user 688a9c8d7e1a812c5d5ec553
+[2025-07-31 22:54:11] INFO: createCourse Endpoint called
+[2025-07-31 22:54:11] INFO: No file uploaded for the course
+[2025-07-31 22:54:12] INFO: Course created successfully: CSC 111 by user 688a9c8d7e1a812c5d5ec553
+[2025-07-31 22:54:49] INFO: createCourse Endpoint called
+[2025-07-31 22:54:49] INFO: No file uploaded for the course
+[2025-07-31 22:54:49] INFO: Course created successfully: CSC 104 by user 688a9c8d7e1a812c5d5ec553
+[2025-07-31 22:56:05] INFO: getCourses Endpoint called
+[2025-07-31 23:19:41] INFO: enrollStudent Endpoint called
+[2025-07-31 23:19:41] INFO: Student 688be0059b9bd2d28ebb09d6 enrolled in course 'CSC 400'
+[2025-07-31 23:20:08] INFO: getCourses Endpoint called
+[2025-07-31 23:20:22] INFO: enrollStudent Endpoint called
+[2025-07-31 23:20:22] INFO: Student 688be0059b9bd2d28ebb09d6 enrolled in course 'CSC 111'
+[2025-07-31 23:20:41] INFO: getCourses Endpoint called
+[2025-07-31 23:21:15] INFO: Cron jobs scheduled successfully.
+[2025-07-31 23:21:16] INFO: Cloudinary configuration successful.
+[2025-07-31 23:21:16] INFO: SMTP connection verified successfully.
+[2025-07-31 23:21:32] INFO: getCourses Endpoint called
+[2025-07-31 23:21:36] INFO: getCourses Endpoint called
+[2025-08-05 01:35:54] INFO: Cron jobs scheduled successfully.
+[2025-08-05 01:35:54] INFO: Cloudinary configuration successful.
+[2025-08-05 01:35:55] INFO: SMTP connection verified successfully.
+[2025-08-05 01:41:08] INFO: Creating course...
+[2025-08-05 01:41:09] WARN: Course with code 'CSC 104' already exists
+[2025-08-05 01:41:51] INFO: Cron jobs scheduled successfully.
+[2025-08-05 01:41:51] INFO: Cloudinary configuration successful.
+[2025-08-05 01:41:52] INFO: SMTP connection verified successfully.
+[2025-08-05 01:42:01] INFO: Creating course...
+[2025-08-05 01:42:01] WARN: Course with code 'CSC 104' already exists
+[2025-08-05 01:42:01] ERROR: Error creating course: A course with the code 'CSC 104' already exists.
+[2025-08-05 01:42:44] INFO: Creating course...
+[2025-08-05 01:42:44] INFO: Course 'CSC 208' created by user 688a9c8d7e1a812c5d5ec553
+[2025-08-05 21:59:27] INFO: Cron jobs scheduled successfully.
+[2025-08-05 21:59:27] INFO: Cloudinary configuration successful.
+[2025-08-05 22:00:44] ERROR: Error verifying SMTP connection: connect ETIMEDOUT 173.194.219.109:465
+[2025-08-05 22:01:23] INFO: getCourses service called
+[2025-08-05 22:02:47] INFO: updateCourse service called
+[2025-08-05 22:02:48] INFO: Course updated successfully: CSC 400 by 688a9c8d7e1a812c5d5ec553
+[2025-08-05 22:03:52] INFO: Creating course...
+[2025-08-05 22:03:54] INFO: Course 'CSC 555' created by user 688a9c8d7e1a812c5d5ec553
+[2025-08-05 22:06:18] INFO: Cron jobs scheduled successfully.
+[2025-08-05 22:06:19] INFO: Cloudinary configuration successful.
+[2025-08-05 22:07:34] ERROR: Error verifying SMTP connection: connect ETIMEDOUT 66.102.1.109:465
+[2025-08-05 22:11:54] INFO: Cron jobs scheduled successfully.
+[2025-08-05 22:11:54] INFO: Cloudinary configuration successful.
+[2025-08-05 22:13:09] ERROR: Error verifying SMTP connection: connect ETIMEDOUT 66.102.1.109:465
+[2025-08-05 22:14:42] INFO: createAssignment Endpoint called
+[2025-08-05 22:14:42] ERROR: Error creating assignment: Only teachers can create assignments
+[2025-08-05 22:17:17] INFO: getAssignments Endpoint called
+[2025-08-05 22:19:48] ERROR: Error sending email: connect ETIMEDOUT 173.194.219.109:465
+[2025-08-05 22:22:40] INFO: createAssignment Endpoint called
+[2025-08-05 22:23:57] ERROR: Error sending email: connect ETIMEDOUT 173.194.219.109:465
+[2025-08-05 22:24:26] INFO: getAssignments Endpoint called
+[2025-08-05 22:26:23] INFO: Cron jobs scheduled successfully.
+[2025-08-05 22:26:23] INFO: Cloudinary configuration successful.
+[2025-08-05 22:26:57] INFO: createAssignment Endpoint called
+[2025-08-05 22:27:39] ERROR: Error verifying SMTP connection: connect ETIMEDOUT 66.102.1.108:465
+[2025-08-05 22:28:14] ERROR: Error sending email: connect ETIMEDOUT 66.102.1.108:465
+[2025-08-05 22:29:49] INFO: createAssignment Endpoint called
+[2025-08-05 22:31:05] ERROR: Error sending email: connect ETIMEDOUT 66.102.1.108:465
+[2025-08-05 22:37:54] INFO: submitAssignment Endpoint called
+[2025-08-05 22:41:01] INFO: editAssignmentDueDate Endpoint called

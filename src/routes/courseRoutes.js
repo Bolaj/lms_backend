@@ -5,7 +5,7 @@ const { createCourse, getCourses, enrollStudent, updateCourse, softDeleteCourse,
 const courseRouter = express.Router();
 
 courseRouter.post("/", verifyUser,  createCourse);
-courseRouter.get("/", verifyUser, getCourses);
+courseRouter.get("/",  getCourses);
 courseRouter.post("/:courseCode/enroll", verifyToken, enrollStudent);
 courseRouter.put("/:courseCode", verifyUser, updateCourse);
 courseRouter.post("/:courseCode/soft-delete", verifyUser, softDeleteCourse);
