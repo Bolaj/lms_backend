@@ -96,6 +96,35 @@ exports.verifyAccount = async ({ email, code }) => {
   return { message: "Account verified successfully" };
 };
 
+exports.resendVerificationCode = async (email) => {
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    const error = new Error("User not found");
+    error.status = 404;
+    throw error;
+  }
+
+  if (user.isVerified) {
+    const error = new Error("Account is already verified");
+    error.status = 400;
+    throw error;
+  }
+
+  const newVerificationCode = generateVerificationCode();
+  user.verificationCode = newVerificationCode;
+  user.verificationCodeExpires = new Date(Date.now() + 10 * 60 * 1000); // 10 mins
+  await user.save();
+
+  await sendEmail(
+    email,
+    "New Verification Code",
+    `Your new verification code is: ${newVerificationCode}. It expires in 10 minutes.`
+  );
+
+  return { message: "New verification code sent." };
+};
+
 exports.getUserProfile = async (id) => {
   const user = await User.findById(id).select("-password");
   if (!user) throw new Error("User not found");
@@ -109,6 +138,7 @@ exports.updateUserProfile = async (id, data) => {
 
   return user;
 };
+
 
 exports.deleteUserByRole = async (id, expectedRole) => {
   const user = await User.findById(id);
