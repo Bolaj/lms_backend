@@ -557,3 +557,23 @@
 [2025-08-05 22:31:05] ERROR: Error sending email: connect ETIMEDOUT 66.102.1.108:465
 [2025-08-05 22:37:54] INFO: submitAssignment Endpoint called
 [2025-08-05 22:41:01] INFO: editAssignmentDueDate Endpoint called
+[2025-08-07 22:24:01] INFO: Cron jobs scheduled successfully.
+[2025-08-07 22:24:01] INFO: Cloudinary configuration successful.
+[2025-08-07 22:24:02] INFO: SMTP connection verified successfully.
+[2025-08-07 22:24:57] INFO: Cron jobs scheduled successfully.
+[2025-08-07 22:24:57] INFO: Cloudinary configuration successful.
+[2025-08-07 22:24:58] INFO: SMTP connection verified successfully.
+[2025-08-07 22:25:44] INFO: Email sent to oyawoye@gmail.com
+[2025-08-07 22:32:11] INFO: Cron jobs scheduled successfully.
+[2025-08-07 22:32:11] INFO: Cloudinary configuration successful.
+[2025-08-07 22:32:15] INFO: SMTP connection verified successfully.
+[2025-08-07 22:33:48] INFO: Cron jobs scheduled successfully.
+[2025-08-07 22:33:48] INFO: Cloudinary configuration successful.
+[2025-08-07 22:33:49] INFO: SMTP connection verified successfully.
+[2025-08-07 22:34:58] INFO: Email sent to mattybolaji@gmail.com
+[2025-08-07 22:36:36] INFO: Fetching enrolled courses for user ID: 688be0059b9bd2d28ebb09d6
+[2025-08-07 22:36:36] INFO: Enrolled courses fetched successfully for user ID: 688be0059b9bd2d28ebb09d6
+[2025-08-07 22:37:09] INFO: getCourses service called
+[2025-08-07 22:39:05] INFO: softDeleteCourse service called
+[2025-08-07 22:39:06] INFO: Course soft-deleted: CSC 104 by 688a9c8d7e1a812c5d5ec553
+[2025-08-07 22:39:30] INFO: getCourses service called
